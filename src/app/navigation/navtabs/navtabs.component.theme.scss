@@ -1,0 +1,11 @@
+@import '@angular/material/theming';
+
+@mixin navtabs-component-theme($maguhome) {
+
+        $primary: map-get($maguhome, primary);
+        $accent: map-get($maguhome, accent);
+
+        .navtabs-container {
+            background-color: mat-color($maguhome-primary, lighter);
+        }
+    }

@@ -1,0 +1,95 @@
+@import '@angular/material/theming';
+
+@include mat-core();
+
+$maguhome-primary: (
+    50 : #f0f9f8,
+    100 : #d9efed,
+    200 : #c0e5e2,
+    300 : #a6dbd6,
+    400 : #93d3cd,
+    500 : #80cbc4,
+    600 : #78c6be,
+    700 : #6dbeb6,
+    800 : #63b8af,
+    900 : #50aca2,
+    A100 : #ffffff,
+    A200 : #d9fffb,
+    A400 : #a6fff5,
+    A700 : #8cfff2,
+    contrast: (
+        50 : #000000,
+        100 : #000000,
+        200 : #000000,
+        300 : #000000,
+        400 : #000000,
+        500 : #000000,
+        600 : #000000,
+        700 : #000000,
+        800 : #000000,
+        900 : #000000,
+        A100 : #000000,
+        A200 : #000000,
+        A400 : #000000,
+        A700 : #000000,
+    )
+);
+
+$maguhome-accent: (
+    50 : #fffdf9,
+    100 : #fffbf0,
+    200 : #fff9e6,
+    300 : #fff6db,
+    400 : #fff4d4,
+    500 : #fff2cc,
+    600 : #fff0c7,
+    700 : #ffeec0,
+    800 : #ffecb9,
+    900 : #ffe8ad,
+    A100 : #ffffff,
+    A200 : #ffffff,
+    A400 : #ffffff,
+    A700 : #ffffff,
+    contrast: (
+        50 : #000000,
+        100 : #000000,
+        200 : #000000,
+        300 : #000000,
+        400 : #000000,
+        500 : #000000,
+        600 : #000000,
+        700 : #000000,
+        800 : #000000,
+        900 : #000000,
+        A100 : #000000,
+        A200 : #000000,
+        A400 : #000000,
+        A700 : #000000,
+    )
+);
+
+
+$maguhome-primary: mat-palette($maguhome-primary, 700, 300, 900);
+$maguhome-accent: mat-palette($maguhome-accent, 500, 400, 700 );
+
+$maguhome-warn: mat-palette($mat-red);
+
+$maguhome: mat-light-theme($maguhome-primary, $maguhome-accent, $maguhome-warn);
+
+@import 'app/navigation/navtabs/navtabs.component-theme.scss';
+
+@include angular-material-theme($maguhome);
+
+//Navtabs component scss file
+@include navtabs-component-theme($maguhome);
+
+
+
+
+//all styles go here
+.mat-list-option:hover,
+.mat-list-option.mat-list-item-focus,
+.mat-nav-list .mat-list-item:hover,
+.mat-nav-list .mat-list-item.mat-list-item-focus {
+    background-color: mat-color($maguhome-primary, lighter);
+}
